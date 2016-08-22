@@ -1,0 +1,13 @@
+<h1>Listing articles</h1>
+<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<%= link_to "Sign In", new_user_registration_path %>
+<%= link_to "New Article Page", new_article_path %>
+
+<br><br>
+
+<% @articles.each do |article| %>
+    <strong><%= link_to (article.title), article %></strong> --last updated <%= article.updated_at.localtime %><br>
+    <%= article.text %><br>
+    <%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <br><br><br>
+<% end %>

@@ -1,0 +1,1 @@
+A simple rails CRUD application for a blog. Authorization with the devise gem
